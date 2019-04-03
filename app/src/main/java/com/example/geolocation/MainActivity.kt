@@ -28,7 +28,7 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     var adapter: MapasAdapter = MapasAdapter(this@MainActivity)
-    lateinit var pusher: Pusher
+    //lateinit var pusher: Pusher
     val MY_PERMISSIONS_REQUEST_LOCATION = 100
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setupPusher()
+        //setupPusher()
         fab.setOnClickListener { view ->
             if (checkLocationPermission())
                 sendLocation()
@@ -50,12 +50,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        pusher.connect()
+        // pusher.connect()
     }
 
     override fun onStop() {
         super.onStop()
-        pusher.disconnect()
+        //pusher.disconnect()
     }
 
     @SuppressLint("MissingPermission")
@@ -142,6 +142,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    /*
     private fun setupPusher() {
         val options = PusherOptions()
         options.setCluster("us2")
@@ -160,5 +162,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    */
 
 }
